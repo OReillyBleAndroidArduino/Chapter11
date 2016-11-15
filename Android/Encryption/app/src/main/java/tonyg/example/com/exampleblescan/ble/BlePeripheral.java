@@ -250,10 +250,10 @@ public class BlePeripheral {
 
         String plainText = new String(plainPacket, CHARACTER_ENCODING);
 
-        String encriptedValue = Rot13Codec.encrypt(plainText);
+        String encryptedValue = Rot13Codec.encrypt(plainText);
 
         //Log.d(TAG, "Writing message: '" + new String(encryptedChunk, "ASCII") + "' to " + characteristic.getUuid().toString());
-        characteristic.setValue(encriptedValue);
+        characteristic.setValue(encryptedValue);
         mBluetoothGatt.writeCharacteristic(characteristic);
         mNumPacketsSent++;
     }
